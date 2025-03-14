@@ -4,26 +4,29 @@
 
 int main()
 {
+	std::cout << "Testing array creation: " << std::endl;
 	Array<int> empty;
-	std::cout << "Empty array size: " << empty.size() << std::endl;
+	std::cout << "	Empty array size: " << empty.size() << std::endl;
 
 	Array<int> numbers(5);
-	std::cout << "Number array size: " << numbers.size() << std::endl;
+	std::cout << "	Number array size: " << numbers.size() << std::endl;
 
 	for (unsigned int i = 0; i < numbers.size(); i++)
 	{
 		numbers[i] = i * 2;
 	}
 
-	std::cout << "Numbers: ";
+	std::cout << "	Numbers: ";
 	for (unsigned int i = 0; i < numbers.size(); i++)
 	{
 		std::cout << numbers[i] << " ";
 	}
 	std::cout << std::endl;
+	std::cout << std::endl;
 
+	std::cout << "Testing copies: " << std::endl;
 	Array<int> copy(numbers);
-	std::cout << "Copy: ";
+	std::cout << "	Copy: ";
 	for (unsigned int i = 0; i < copy.size(); i++)
 	{
 		std::cout << copy[i] << " ";
@@ -31,23 +34,27 @@ int main()
 	std::cout << std::endl;
 
 	numbers[2] = 99;
-	std::cout << "After change - Original[2]: " << numbers[2] << ", Copy[2]: " << copy[2] << std::endl;
+	std::cout << "	After change - Original[2]: " << numbers[2] << ", Copy[2]: " << copy[2] << std::endl;
 
 	Array<std::string> strings(3);
 	strings[0] = "Hello";
 	strings[1] = "Template";
 	strings[2] = "Array";
 
-	std::cout << "Strings: " << strings[0] << " " << strings[1] << " " << strings[2] << std::endl;
+	std::cout << std::endl;
+	std::cout << "Testing with strings: " << std::endl;
+	std::cout << "	Strings: " << strings[0] << " " << strings[1] << " " << strings[2] << std::endl;
 
+	std::cout << std::endl;
+	std::cout << "Testing exceptions: " << std::endl;
 	try
 	{
-		std::cout << "Accessing out of bounds: ";
+		std::cout << "	Accessing out of bounds: " << std::endl;
 		std::cout << numbers[10] << std::endl;
 	}
 	catch (std::exception& e)
 	{
-		std::cout << "Exception: " << e.what() << std::endl;
+		std::cout << "		Exception: " << e.what() << std::endl;
 	}
 
 	return 0;

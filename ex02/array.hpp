@@ -11,7 +11,7 @@ class Array
 		unsigned int	_size;
 
 	public:
-		Array() : _array(nullptr), _size(0) {}
+		Array() : _array(0), _size(0) {}
 		Array(unsigned int n);
 		Array(const Array& other);
 		~Array()
